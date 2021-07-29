@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 flask-jwt-extended = "*"
 python-decouple = "*"
 flask-migrate = "*"
+colorama = "*"
 
 [dev-packages]
 
