@@ -11,6 +11,7 @@ flask-jwt-extended = "*"
 python-decouple = "*"
 flask-migrate = "*"
 colorama = "*"
+flask-cors = "*"
 
 [dev-packages]
 

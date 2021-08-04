@@ -1,5 +1,6 @@
 from decouple import config
 import os
+from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
