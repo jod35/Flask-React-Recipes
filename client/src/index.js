@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/main.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import NavBar from './components/Navbar';
@@ -21,7 +22,7 @@ const App=()=>{
     
     return (
         <Router>
-        <div className="container">
+        <div className="">
             <NavBar/>
             <Switch>
                 <Route path="/create_recipe">
