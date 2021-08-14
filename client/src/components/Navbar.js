@@ -24,7 +24,7 @@ const NavBar = () => {
                             <Link className="nav-link  active" to="/create_recipe">Create Recipes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active">Log Out</Link>
+                            <Link className="nav-link active" to='/'>Log Out</Link>
                         </li>
                     </ul>
                 </div>
