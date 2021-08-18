@@ -76,6 +76,9 @@ class Login(Resource):
                 {"access_token":access_token,"refresh_token":refresh_token}
             )
 
+        else:
+            return jsonify({"message":"Invalid username or password"})
+
 
 @auth_ns.route('/refresh')
 class RefreshResource(Resource):

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Button} from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
@@ -7,7 +7,9 @@ import { useForm } from 'react-hook-form'
 const SignUpPage = () => {
 
 
-    const { register, watch, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [show,setShow]=useState(false)
+    const [serverResponse,setServerResponse]=useState('')
 
     const submitForm = (data) => {
 
@@ -15,10 +17,10 @@ const SignUpPage = () => {
         if (data.password === data.confirmPassword) {
 
 
-            const body={
-                username:data.username,
-                email:data.email,
-                password:data.password
+            const body = {
+                username: data.username,
+                email: data.email,
+                password: data.password
             }
 
             const requestOptions = {
@@ -26,14 +28,18 @@ const SignUpPage = () => {
                 headers: {
                     'content-type': 'application/json'
                 },
-                body:JSON.stringify(body)
+                body: JSON.stringify(body)
             }
 
 
             fetch('/auth/signup', requestOptions)
-            .then(res=>res.json())
-            .then(data=>console.log(data))
-            .catch(err=>console.log(err))
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data)
+                    setServerResponse(data.message)
+                    setShow(true)
+                })
+                .catch(err => console.log(err))
 
             reset()
         }
@@ -51,8 +57,23 @@ const SignUpPage = () => {
         <div className="container">
             <div className="form">
 
-                <h1>Sign Up Page</h1>
+                
+               {show?
+               <>
+                <Alert variant="success" onClose={() => {setShow(false)
+                }} dismissible>
+                <p>
+                   {serverResponse}
+                </p>
+                </Alert>
 
+                <h1>Sign Up Page</h1>
+                
+                </>
+                :
+                <h1>Sign Up Page</h1>
+               
+               }
                 <form>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
@@ -61,8 +82,8 @@ const SignUpPage = () => {
                             {...register("username", { required: true, maxLength: 25 })}
                         />
 
-                        {errors.username && <span style={{ color: "red" }}>Username is required</span>}
-                        {errors.username?.type === "maxLength" && <span style={{ color: "red" }}>Max characters should be 25</span>}
+                        {errors.username && <small style={{ color: "red" }}>Username is required</small>}
+                        {errors.username?.type === "maxLength" && <p style={{ color: "red" }}><small>Max characters should be 25 </small></p>}
                     </Form.Group>
                     <br></br>
                     <Form.Group>
