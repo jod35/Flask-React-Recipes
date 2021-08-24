@@ -79,6 +79,7 @@ class RecipeResource(Resource):
         recipe_to_update=Recipe.query.get_or_404(id)
 
         data=request.get_json()
+        
 
         recipe_to_update.update(data.get('title'),data.get('description'))
 
