@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+<<<<<<< HEAD
 flask = "*"
 flask-restx = "*"
 flask-sqlalchemy = "*"
@@ -13,6 +14,8 @@ flask-migrate = "*"
 colorama = "*"
 flask-cors = "*"
 gunicorn = "*"
+=======
+>>>>>>> 04705058f8c9726e9f2fc8d921032b41a0af5caa
 
 [dev-packages]
 
