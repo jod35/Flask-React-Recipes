@@ -24,6 +24,10 @@ The project is a simple recipe app that allows simple CRUD actions against a Fla
 - Making API Calls with Fetch API
 
 
+## Video Playlist
+[Build a Full stack web app with Flask and ReactJS](https://www.youtube.com/playlist?list=PLEt8Tae2spYkfEYQnKxQ4vrOULAnMI1iF)
+
+
 
 
 
