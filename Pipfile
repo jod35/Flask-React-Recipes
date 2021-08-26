@@ -12,6 +12,7 @@ python-decouple = "*"
 flask-migrate = "*"
 colorama = "*"
 flask-cors = "*"
+gunicorn = "*"
 
 [dev-packages]
 
