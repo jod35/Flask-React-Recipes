@@ -9,7 +9,7 @@ Flask-JWT-Extended==4.2.3
 Flask-Migrate==3.1.0
 flask-restx==0.5.0
 Flask-SQLAlchemy==2.5.1
-greenlet==1.1.0
+greenlet==2.0.1
 itsdangerous==2.0.1
 Jinja2==3.0.1
 jsonschema==3.2.0
