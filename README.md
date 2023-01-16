@@ -31,5 +31,19 @@ The project is a simple recipe app that allows simple CRUD actions against a Fla
 [View The project here](https://flask-react-recipes.onrender.com/signup)
 
 
-
+# To run this project
+1. Clone the Git repository
+2. In the root folder, create a virtual environment using your favorite method.
+3. Install project dependencies with  
+``
+pip install -r requirements.txt
+``
+4. Run project with 
+``
+python run.py
+``
+5. Run test
+``
+pytest
+``
 
