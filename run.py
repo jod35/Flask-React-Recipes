@@ -1,4 +1,4 @@
 from main import create_app
-from config import DevConfig,ProdConfig
+from config import DevConfig, ProdConfig
 
-app=create_app(ProdConfig)
+app = create_app(ProdConfig)
